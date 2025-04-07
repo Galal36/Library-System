@@ -62,7 +62,7 @@ function printBook() {
        <td>${author}</td>
        <td>${authorEmail}</td>
        <td><button onclick="editRow(this)">Edit</button></td>
-       <td><button onclick="deleteRow(this)">Devare Book</button></td>
+       <td><button onclick="deleteRow(this)">Delete Book</button></td>
    `;
 
    count++;
