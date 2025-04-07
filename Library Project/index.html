@@ -1,0 +1,117 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Library System</title>
+        <style>
+            body
+            {
+                background-color: rgb(155, 9, 53);
+            }
+
+            label 
+            {
+                 display: block; 
+                 width: 50%; 
+                 margin-left: auto;
+                 margin-right: auto;
+                 text-align: center;
+                 color: white;
+                 font-size:x-large;
+                 margin-bottom: 7px;
+                }
+
+                input
+                {
+                display: block; 
+                width: 30%; 
+                 height: 20px;
+                 margin-left: auto;
+                 margin-right: auto;
+                 text-align: center;
+                 margin-bottom: 7px;
+                }
+                button
+                {
+                    display: block; 
+                 margin-left: auto;
+                 margin-right: auto;
+                 text-align: center;
+                }
+
+        </style>
+    </head>
+    <body>
+
+<label>How many books?</label>
+<input type="number" id="connect_with_button" placeholder="Enter a valid number!">
+<button onclick="direct_to_book_info()">OK</button>
+
+
+
+<script>
+    var inpVal=document.getElementById("connect_with_button");
+    function direct_to_book_info(){
+        if (!isNaN(inpVal.value) && inpVal.value.trim() !=="" && inpVal.value>0)
+        {
+            window.location.href="books_details.html";
+
+        }
+        else
+        {
+            alert("Fill out a-non zero valid number");
+        }
+        window.location.href="books_details.html?books="+inpVal.value;
+    };
+</script>
+    </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Library System</title>
+    <style>
+        body {
+            background-color: rgb(155, 9, 53);
+        }
+        label {
+            display: block; 
+            width: 50%; 
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: white;
+            font-size: x-large;
+            margin-bottom: 7px;
+        }
+        input {
+            display: block; 
+            width: 30%; 
+            height: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 7px;
+        }
+        button {
+            display: block; 
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<label>How many books?</label>
+<input type="number" id="connect_with_button" placeholder="Enter a valid number!">
+<button onclick="direct_to_book_info()">OK</button>
+
+
+<script src="indexScript.js"></script>
+</body>
+</html>
