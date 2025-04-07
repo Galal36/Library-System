@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Books Details</title>
+    <style>
+        body {
+            background-color: rgb(155, 9, 53);
+            color: wheat;
+            text-align: center;
+        }
+        label {
+            color: rgb(253, 253, 253);
+            margin-bottom: 200px;
+            font-size: 20px;
+        }
+        input {
+            width: 240px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 2px solid #ccc;
+        }
+        th {
+            background-color: #6d7c6d;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #745959;
+        }
+        tr:hover {
+            background-color: #be4a97;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: wheat; text-align: center;">Book Library</h1>
+    <form name="bookAppending" id="add_book_form">
+        <label for="bookName">Enter A book Name</label><br>
+        <input type="text" id="bookName" placeholder="eg. Ahmed"><br>
+        
+        <label for="price">Enter The book Price</label><br>
+        <input type="text" id="price" placeholder="eg. 199"><br>
+
+        <label for="authorName">Enter The Author Name</label><br>
+        <input type="text" id="authorName" placeholder="eg. Adham Al Sharkawy"><br>
+
+        <label for="authorEmail">Enter The Author Email</label><br>
+        <input list="emailSuggestions" id="authorEmail" placeholder="eg.adham11@gmail.com"><br>
+        <datalist id="emailSuggestions"></datalist>
+
+        <button type="button" onclick="printBook()">Submit</button>
+    </form><br>
+
+    <table id="outputTable">
+        <tr>
+            <th>Book Name</th>
+            <th>Book Price</th>
+            <th>Author Name</th>
+            <th>Author E-mail</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tbody id="output"></tbody>
+    </table>
+
+  <script src="addBookScript.js"></script>
+</body>
+</html>
