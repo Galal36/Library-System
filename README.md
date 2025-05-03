@@ -6,10 +6,10 @@ This project is a simple web-based application for managing a book library. User
 - Add books with validation for name, price, author name, and author email.
 - Prevent duplicate book entries.
 - Suggest previously entered email addresses.
-- Hide the form when the maximum number of books is reached.
+- Hide the form when the maximum number of books is reached.  
 - Edit and delete book entries.
 
 ## Technologies Used
 - HTML
 - CSS
-- JavaScript
+- JavaScript   
