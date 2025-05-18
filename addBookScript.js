@@ -211,6 +211,60 @@ function deleteRow(button) {
     }
 }
 
+// function editRow(button) {
+//     row = button.parentNode.parentNode;
+//     cells = row.getElementsByTagName('td');
+
+//     if (button.textContent === 'Edit') {
+//         for (var i = 0; i < 4; i++) {
+//             cellValue = cells[i].textContent;
+//             cells[i].innerHTML = `<input type="text" value="${cellValue}">`;
+//         }
+//         button.textContent = 'Save';
+//     } else {
+//         // Get the input values
+//         const editedName = cells[0].getElementsByTagName('input')[0].value;
+//         const editedPrice = cells[1].getElementsByTagName('input')[0].value;
+//         const editedAuthor = cells[2].getElementsByTagName('input')[0].value;
+//         const editedEmail = cells[3].getElementsByTagName('input')[0].value;
+
+//         // Validate the edited values
+//         namePattern = /^[a-zA-Z\s]+$/;
+//         pricePattern = /^\d+$/;
+//         authorPattern = /^[a-zA-Z\s]+$/;
+//         emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+//         if (!namePattern.test(editedName)) {
+//             alert('Invalid book name. Please enter only letters and spaces.');
+//             return;
+//         }
+//         if (!pricePattern.test(editedPrice) || editedPrice <= 0) {
+//             alert('Invalid book price. Please enter only digits greater than 0.');
+//             return;
+//         }
+//         if (!authorPattern.test(editedAuthor)) {
+//             alert('Invalid author name. Please enter only letters and spaces.');
+//             return;
+//         }
+//         if (!emailPattern.test(editedEmail)) {
+//             alert('Invalid author email. Please enter a valid email address.');
+//             return;
+//         }
+
+//         // Update the table cells with the validated input values
+//         cells[0].textContent = editedName;
+//         cells[1].textContent = editedPrice;
+//         cells[2].textContent = editedAuthor;
+//         cells[3].textContent = editedEmail;
+//         button.textContent = 'Edit';
+
+//         // Update email suggestions if the email was changed
+//         if (!emailSuggestions.includes(editedEmail)) {
+//             emailSuggestions.push(editedEmail);
+//             updateEmailSuggestions();
+//         }
+//     }
+// }
 function editRow(button) {
     row = button.parentNode.parentNode;
     cells = row.getElementsByTagName('td');
@@ -222,13 +276,17 @@ function editRow(button) {
         }
         button.textContent = 'Save';
     } else {
-        // Get the input values
-        const editedName = cells[0].getElementsByTagName('input')[0].value;
-        const editedPrice = cells[1].getElementsByTagName('input')[0].value;
-        const editedAuthor = cells[2].getElementsByTagName('input')[0].value;
-        const editedEmail = cells[3].getElementsByTagName('input')[0].value;
+        // Get the input elements directly
+        const nameInput = cells[0].querySelector('input');
+        const priceInput = cells[1].querySelector('input');
+        const authorInput = cells[2].querySelector('input');
+        const emailInput = cells[3].querySelector('input');
 
-        // Validate the edited values
+        const editedName = nameInput.value;
+        const editedPrice = priceInput.value;
+        const editedAuthor = authorInput.value;
+        const editedEmail = emailInput.value;
+
         namePattern = /^[a-zA-Z\s]+$/;
         pricePattern = /^\d+$/;
         authorPattern = /^[a-zA-Z\s]+$/;
@@ -251,14 +309,12 @@ function editRow(button) {
             return;
         }
 
-        // Update the table cells with the validated input values
         cells[0].textContent = editedName;
         cells[1].textContent = editedPrice;
         cells[2].textContent = editedAuthor;
         cells[3].textContent = editedEmail;
         button.textContent = 'Edit';
 
-        // Update email suggestions if the email was changed
         if (!emailSuggestions.includes(editedEmail)) {
             emailSuggestions.push(editedEmail);
             updateEmailSuggestions();
